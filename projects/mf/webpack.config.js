@@ -32,7 +32,7 @@ module.exports = {
         name: "mf",
         filename: "remoteEntry.js",
         exposes: {
-            './SowInfoModule': './projects/mf/src/app/show-info/show-info.module.ts',
+            './Module': './projects/mf/src/app/show-info/show-info.module.ts',
         },        
         
        

@@ -7,6 +7,10 @@ const routes: Routes = [
     path:'',
     component:HomeComponent,
     pathMatch:'full'
+  },
+  {
+    path:'mf',
+    loadChildren: ()=> import('mf/Module').then((m)=>m.Module)
   }
 ];
 

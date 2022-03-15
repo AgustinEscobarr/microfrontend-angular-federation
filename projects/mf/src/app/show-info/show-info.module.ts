@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ShowInfoRoutingModule } from './show-info-routing.module';
+import { ShowInfoComponent } from './show-info.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ShowInfoComponent],
   imports: [
     CommonModule,
-    ShowInfoRoutingModule
   ]
 })
 export class ShowInfoModule { }

@@ -28,24 +28,21 @@ module.exports = {
     new ModuleFederationPlugin({
         library: { type: "module" },
 
-        // For remotes (please adjust)
-        // name: "host",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/host/src/app/app.component.ts',
-        // },        
-        
-        // For hosts (please adjust)
-        // remotes: {
-        //     "mf": "http://localhost:4200/remoteEntry.js",
-
-        // },
+        remotes: {
+            'mf': "http://localhost:4242/remoteEntry.js",
+        },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          rxjs: {
+            singleton: true,
+            strictVersion: true,
+            requiredVersion: 'auto',
+            includeSecondaries: true,
+        },
 
           ...sharedMappings.getDescriptors()
         })
